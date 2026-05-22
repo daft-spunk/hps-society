@@ -1,26 +1,702 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-navy-900: #0a1730;
+  --color-navy-800: #0f1e3d;
+  --color-navy-700: #18305a;
+  --color-navy-600: #21406f;
+
+  --color-gold-500: #c9a35a;
+  --color-gold-400: #d8b675;
+  --color-gold-300: #e6cb95;
+  --color-gold-100: #f3e7c9;
+
+  --color-ivory: #f5efe2;
+  --color-paper: #faf6ec;
+
+  --color-ink: #181410;
+  --color-ink-soft: #3c342a;
+
+  --color-rule: rgba(201, 163, 90, 0.45);
+
+  --font-cinzel: var(--font-cinzel-var);
+  --font-cormorant: var(--font-cormorant-var);
+  --font-eb: var(--font-eb-var);
+
+  --tracking-eyebrow: 0.4em;
+  --tracking-ribbon: 0.32em;
+  --tracking-h1: 0.14em;
+  --tracking-h1sub: 0.3em;
+  --tracking-h2: 0.12em;
+  --tracking-est: 0.5em;
+  --tracking-cameo: 0.28em;
+  --tracking-roll: 0.22em;
+  --tracking-glance: 0.3em;
+
+  --shadow-crest: 0 0 0 1px #c9a35a, 0 0 0 6px rgba(201, 163, 90, 0.15),
+    0 12px 40px rgba(0, 0, 0, 0.4);
+  --shadow-cameo: 0 0 0 4px #faf6ec, 0 0 0 5px rgba(201, 163, 90, 0.45);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --paper: #faf6ec;
+  --ivory: #f5efe2;
+  --ink: #181410;
+  --ink-soft: #3c342a;
+  --navy-900: #0a1730;
+  --navy-800: #0f1e3d;
+  --navy-700: #18305a;
+  --navy-600: #21406f;
+  --gold-500: #c9a35a;
+  --gold-400: #d8b675;
+  --gold-300: #e6cb95;
+  --gold-100: #f3e7c9;
+  --rule: rgba(201, 163, 90, 0.45);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-eb-var), "Cormorant Garamond", Georgia, serif;
+  font-size: 18px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(rgba(60, 40, 10, 0.04) 1px, transparent 1px);
+  background-size: 3px 3px;
+  pointer-events: none;
+  z-index: 0;
+  mix-blend-mode: multiply;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}
+
+.rounded-cameo {
+  border-radius: 100px / 130px;
+}
+
+@supports not (backdrop-filter: blur(1px)) {
+  .subnav {
+    background: var(--paper) !important;
+  }
+}
+
+/* ---------- About: drop-cap + corner brackets ---------- */
+.about-prose p {
+  margin: 0 0 18px;
+  font-size: 19px;
+}
+.about-prose p:first-child::first-letter {
+  font-family: var(--font-cormorant-var), "Cormorant Garamond", Georgia, serif;
+  font-weight: 500;
+  float: left;
+  font-size: 88px;
+  line-height: 0.85;
+  padding: 6px 12px 0 0;
+  color: var(--gold-500);
+}
+.about-card {
+  position: relative;
+}
+.about-card::before,
+.about-card::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--gold-500);
+}
+.about-card::before {
+  top: -4px;
+  left: -4px;
+  border-right: 0;
+  border-bottom: 0;
+}
+.about-card::after {
+  bottom: -4px;
+  right: -4px;
+  border-left: 0;
+  border-top: 0;
+}
+
+/* ---------- Masthead: parallax bg + tinted veil + double inset borders ---------- */
+.masthead {
+  position: relative;
+  overflow: hidden;
+  background: var(--navy-900);
+  isolation: isolate;
+}
+.masthead-bg {
+  position: absolute;
+  inset: -10% -2% -10% -2%;
+  background-position: center 30%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 0;
+  will-change: transform;
+  animation: heroFloat 18s ease-in-out infinite alternate;
+}
+.masthead-veil {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(180deg, rgba(10, 23, 48, 0.78), rgba(10, 23, 48, 0.92)),
+    radial-gradient(ellipse at top, rgba(201, 163, 90, 0.22), transparent 60%);
+  pointer-events: none;
+}
+.masthead::before,
+.masthead::after {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  border: 1px solid rgba(201, 163, 90, 0.35);
+  pointer-events: none;
+  z-index: 5;
+}
+.masthead::after {
+  inset: 20px;
+  border-color: rgba(201, 163, 90, 0.18);
+}
+
+@keyframes heroFloat {
+  from {
+    transform: scale(1.05) translateY(0);
+  }
+  to {
+    transform: scale(1.1) translateY(-12px);
+  }
+}
+
+
+/* ---------- Pull quote: parallax heritage bg with navy veil ---------- */
+.pull {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--navy-900);
+  color: var(--ivory);
+  /* Soft entry from the dark timeline above: a slim gold rule replaces the abrupt section border */
+  border-top: 0;
+  border-bottom: 0;
+}
+.pull-bg {
+  position: absolute;
+  inset: -10% 0;
+  background-image: url(/images/heritage/begumpet-arches.jpg);
+  background-size: cover;
+  background-position: center 45%;
+  background-repeat: no-repeat;
+  filter: saturate(0.95) contrast(1.05);
+  z-index: 0;
+  will-change: transform;
+  transform: translate3d(0, 0, 0) scale(1.18);
+}
+.pull-veil {
+  position: absolute;
+  inset: 0;
+  background:
+    /* Top edge fades from solid navy to translucent — joins the dark timeline above without a hard line */
+    linear-gradient(
+      180deg,
+      rgba(10, 23, 48, 0.98) 0%,
+      rgba(10, 23, 48, 0.62) 18%,
+      rgba(15, 30, 61, 0.55) 50%,
+      rgba(10, 23, 48, 0.7) 85%,
+      rgba(10, 23, 48, 0.98) 100%
+    ),
+    /* Subtle gold vignette from top so the image character peeks through */
+    radial-gradient(
+      ellipse at center,
+      rgba(201, 163, 90, 0.08),
+      transparent 70%
+    );
+  z-index: 1;
+}
+.pull > blockquote {
+  position: relative;
+  z-index: 2;
+  color: var(--ivory);
+}
+/* Slim gold rules above and below — visible against the new dark backdrop */
+.pull::before,
+.pull::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--gold-500) 20%,
+    var(--gold-500) 80%,
+    transparent
+  );
+  z-index: 3;
+  opacity: 0.7;
+}
+.pull::before {
+  top: 0;
+}
+.pull::after {
+  bottom: 0;
+}
+
+/* ---------- History section inset gold border ---------- */
+.history-section {
+  position: relative;
+}
+.history-section::before {
+  content: "";
+  position: absolute;
+  inset: 24px;
+  border: 1px solid rgba(201, 163, 90, 0.22);
+  pointer-events: none;
+}
+
+/* ---------- Timeline rail + diamonds ---------- */
+.timeline {
+  position: relative;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    var(--gold-500) 8%,
+    var(--gold-500) 92%,
+    transparent
+  );
+  transform: translateX(-0.5px);
+}
+.t-row {
+  display: grid;
+  grid-template-columns: 1fr 88px 1fr;
+  gap: 24px;
+  align-items: start;
+  margin-bottom: 56px;
+}
+.t-row:last-child {
+  margin-bottom: 0;
+}
+.t-year {
+  font-family: var(--font-cinzel-var), "Cinzel", serif;
+  font-weight: 600;
+  color: var(--gold-300);
+  font-size: 22px;
+  letter-spacing: 0.08em;
+  text-align: center;
+  position: relative;
+  padding-top: 6px;
+}
+.t-year::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  background: var(--navy-900);
+  border: 1.5px solid var(--gold-500);
+  transform: translateX(-50%) rotate(45deg);
+}
+.t-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(201, 163, 90, 0.25);
+  padding: 22px 24px;
+}
+.t-card h4 {
+  font-family: var(--font-cinzel-var), "Cinzel", serif;
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  margin: 0 0 10px;
+  color: var(--gold-300);
+  text-transform: uppercase;
+}
+.t-card p {
+  margin: 0;
+  font-family: var(--font-cormorant-var), "Cormorant Garamond", serif;
+  font-size: 18px;
+  color: var(--ivory);
+  line-height: 1.55;
+}
+.t-row.left .t-card-right {
+  grid-column: 1;
+  grid-row: 1;
+}
+.t-row.left .t-spacer {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+/* ---------- Pull quote rules ---------- */
+.pull blockquote::before,
+.pull blockquote::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 1px;
+  background: var(--gold-500);
+  margin: 0 auto 28px;
+}
+.pull blockquote::after {
+  margin: 28px auto 0;
+}
+
+/* ---------- Campus placeholder plate (when no image) ---------- */
+.campus-ph {
+  background:
+    repeating-linear-gradient(
+      135deg,
+      rgba(10, 23, 48, 0.05) 0 10px,
+      rgba(10, 23, 48, 0.02) 10px 20px
+    ),
+    linear-gradient(180deg, var(--navy-800), var(--navy-700));
+}
+
+/* ---------- Campus card: image + logo overlay + year ---------- */
+.campus-figure {
+  position: relative;
+  background: var(--navy-900);
+}
+.campus-img {
+  transition: transform 1200ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    filter 600ms ease;
+}
+.campus:hover .campus-img {
+  transform: scale(1.05);
+}
+.campus-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(10, 23, 48, 0.15) 0%,
+      rgba(10, 23, 48, 0.05) 35%,
+      rgba(10, 23, 48, 0.85) 100%
+    );
+  pointer-events: none;
+}
+.campus-logo {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 0 1px var(--gold-500),
+    0 0 0 4px rgba(250, 246, 236, 0.85),
+    0 6px 18px rgba(0, 0, 0, 0.35);
+  background: var(--navy-900);
+  z-index: 2;
+}
+.campus-year {
+  position: absolute;
+  bottom: 16px;
+  right: 18px;
+  text-align: right;
+  z-index: 2;
+  color: var(--ivory);
+  font-family: var(--font-cinzel-var), "Cinzel", serif;
+  line-height: 1;
+}
+.campus-year-label {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 0.32em;
+  color: var(--gold-300);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.campus-year-num {
+  display: block;
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 600px) {
+  .campus-logo {
+    width: 52px;
+    height: 52px;
+    top: 14px;
+    left: 14px;
+  }
+  .campus-year-num {
+    font-size: 24px;
+  }
+}
+
+/* ---------- Cameo placeholder (when no portrait) ---------- */
+.cameo-ph {
+  background:
+    repeating-linear-gradient(
+      135deg,
+      rgba(10, 23, 48, 0.06) 0 8px,
+      rgba(10, 23, 48, 0.02) 8px 16px
+    ),
+    linear-gradient(180deg, #e9e0c8, #d9ccaa);
+}
+
+/* ---------- Members roll dashed dividers ---------- */
+.roll-item {
+  border-bottom: 1px dashed rgba(201, 163, 90, 0.4);
+}
+
+/* ---------- Member cameo size variants — all locket-shaped ---------- */
+.first-chairman-frame {
+  width: 180px;
+  height: 234px;
+  border-radius: 110px / 145px;
+  border: 1px solid var(--gold-500);
+  box-shadow: 0 0 0 5px var(--paper), 0 0 0 6px rgba(201, 163, 90, 0.6),
+    0 10px 28px rgba(0, 0, 0, 0.28);
+  background: var(--paper);
+}
+
+.cameo-lg {
+  width: 160px;
+  height: 208px;
+  border-radius: 100px / 130px;
+  border: 1px solid var(--gold-500);
+  box-shadow: 0 0 0 4px var(--paper), 0 0 0 5px rgba(201, 163, 90, 0.5),
+    0 6px 18px rgba(0, 0, 0, 0.18);
+  background: var(--paper);
+  transition: transform 350ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    box-shadow 350ms ease;
+}
+.cameo-lg:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 0 0 4px var(--paper), 0 0 0 5px var(--gold-500),
+    0 10px 24px rgba(0, 0, 0, 0.25);
+}
+
+.cameo-md {
+  width: 144px;
+  height: 188px;
+  border-radius: 90px / 118px;
+  border: 1px solid var(--gold-500);
+  box-shadow: 0 0 0 3px var(--paper), 0 0 0 4px rgba(201, 163, 90, 0.5),
+    0 5px 14px rgba(0, 0, 0, 0.18);
+  background: var(--paper);
+  transition: transform 350ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    box-shadow 350ms ease;
+}
+.cameo-md:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 0 0 3px var(--paper), 0 0 0 4px var(--gold-500),
+    0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.cameo-sm {
+  width: 124px;
+  height: 162px;
+  border-radius: 78px / 102px;
+  border: 1px solid var(--gold-500);
+  box-shadow: 0 0 0 3px var(--paper), 0 0 0 4px rgba(201, 163, 90, 0.45),
+    0 4px 12px rgba(0, 0, 0, 0.15);
+  background: var(--paper);
+  transition: transform 350ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    box-shadow 350ms ease;
+}
+.cameo-sm:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 0 0 3px var(--paper), 0 0 0 4px var(--gold-500),
+    0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 600px) {
+  .cameo-lg {
+    width: 140px;
+    height: 180px;
+    border-radius: 88px / 112px;
+  }
+  .cameo-md {
+    width: 130px;
+    height: 170px;
+    border-radius: 82px / 106px;
+  }
+  .cameo-sm {
+    width: 112px;
+    height: 148px;
+    border-radius: 70px / 92px;
+  }
+}
+
+/* ---------- Entrance animations ---------- */
+@keyframes revealUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes revealFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.reveal-up {
+  opacity: 0;
+  animation: revealUp 800ms cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}
+
+/* Scroll-revealed sections: hidden by default, .is-visible un-hides */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 900ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 900ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  will-change: opacity, transform;
+}
+[data-reveal].is-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Timeline cards: slide in from the appropriate side */
+[data-reveal][data-reveal-from="left"] {
+  transform: translateX(-48px);
+}
+[data-reveal][data-reveal-from="right"] {
+  transform: translateX(48px);
+}
+[data-reveal][data-reveal-from="left"].is-visible,
+[data-reveal][data-reveal-from="right"].is-visible {
+  transform: translateX(0) !important;
+}
+
+/* On mobile the timeline collapses to a single rail — slide from the right for all */
+@media (max-width: 960px) {
+  [data-reveal][data-reveal-from="left"] {
+    transform: translateX(24px);
+  }
+  [data-reveal][data-reveal-from="right"] {
+    transform: translateX(24px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-up,
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+  .masthead-bg {
+    animation: none !important;
+  }
+}
+
+/* ---------- Hover lifts on cards ---------- */
+.value,
+.campus,
+.about-card {
+  transition: transform 350ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    border-color 350ms ease, box-shadow 350ms ease;
+}
+.value:hover,
+.campus:hover {
+  transform: translateY(-3px);
+  border-color: var(--gold-500);
+}
+.person {
+  transition: transform 350ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.person:hover {
+  transform: translateY(-3px);
+}
+
+/* ---------- Mission callout in Vision section ---------- */
+.mission {
+  position: relative;
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 56px;
+  padding: 40px 32px;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 23, 48, 0.02),
+    rgba(201, 163, 90, 0.05)
+  );
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+.mission .label {
+  font-family: var(--font-cinzel-var), "Cinzel", serif;
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  color: var(--gold-500);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.mission p {
+  margin: 0;
+  font-family: var(--font-cormorant-var), "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: clamp(20px, 2.2vw, 26px);
+  line-height: 1.5;
+  color: var(--navy-900);
+}
+
+/* ---------- Responsive: timeline reflow, grids ---------- */
+@media (max-width: 960px) {
+  .timeline::before {
+    left: 22px;
+  }
+  .t-row {
+    grid-template-columns: 44px 1fr;
+    gap: 16px;
+  }
+  .t-year {
+    font-size: 18px;
+    text-align: left;
+    padding-left: 0;
+  }
+  .t-year::before {
+    left: 22px;
+  }
+  .t-row .t-spacer {
+    display: none;
+  }
+  .t-row .t-card-right,
+  .t-row.left .t-card-right {
+    grid-column: 2;
+    grid-row: 1;
+  }
 }
