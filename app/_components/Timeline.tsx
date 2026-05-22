@@ -24,7 +24,6 @@ export default function Timeline() {
               key={ev.year}
               className={`t-row ${ev.side}`}
               data-reveal
-              data-reveal-from={ev.side}
             >
               <div className="t-spacer t-card-left" aria-hidden="true" />
               <div className="t-year">{ev.year}</div>
