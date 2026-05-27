@@ -82,7 +82,7 @@ export default function Footer() {
             </small>
           </div>
         </div>
-        <div>© 1923 — 2026 · The Hyderabad Public School Society</div>
+        <div>© 2026 · The Hyderabad Public School Society</div>
       </div>
     </footer>
   );

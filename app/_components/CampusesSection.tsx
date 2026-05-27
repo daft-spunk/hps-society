@@ -12,7 +12,7 @@ export default function CampusesSection() {
       <div className="max-w-[1120px] mx-auto">
         <SectionHeader
           titleId="campuses-title"
-          eyebrow="— IV —"
+          eyebrow="— II —"
           title="The Four Campuses"
           sub="Distinct in setting, united in purpose."
         />

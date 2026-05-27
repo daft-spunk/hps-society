@@ -24,7 +24,7 @@ export default function Masthead() {
         >
           The Hyderabad Public
           <br />
-          Schools&nbsp;Society
+          School&nbsp;Society
           <em className="block not-italic text-gold-300 font-normal text-[0.55em] tracking-h1sub mt-4">
             — Stewards of a Century of Soaring, Leading &amp; Serving —
           </em>

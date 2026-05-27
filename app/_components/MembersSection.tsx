@@ -1,8 +1,6 @@
 import SectionHeader from "./SectionHeader";
 import {
-  firstChairman,
   managingCommittee,
-  boardOfGovernors,
   societyMembers,
   affiliateMembers,
   type Person,
@@ -79,49 +77,16 @@ export default function MembersSection() {
       <div className="max-w-[1120px] mx-auto">
         <SectionHeader
           titleId="members-title"
-          eyebrow="— V —"
-          title="The Society & Board of Governors"
-          sub="The custodians of the institution — past and present."
+          eyebrow="— III —"
+          title="Members of the Society"
+          sub="The custodians of the institution."
         />
-
-        {/* First Chairman — special historical callout */}
-        <div className="text-center mb-12 max-[600px]:mb-8">
-          <div className="font-cinzel text-[10px] tracking-glance text-gold-500 uppercase mb-3">
-            — In Memoriam · First Chairman —
-          </div>
-          <div className="first-chairman-frame mx-auto mb-5 relative overflow-hidden">
-            <img
-              src={firstChairman.portrait}
-              alt={`${firstChairman.name} — ${firstChairman.role}`}
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <h3 className="font-cormorant font-semibold text-[26px] text-navy-900 m-0 mb-2">
-            {firstChairman.name}
-          </h3>
-          <div className="font-cinzel text-[11px] tracking-cameo text-gold-500 uppercase">
-            {firstChairman.role}
-          </div>
-          {firstChairman.honorific && (
-            <div className="font-cormorant italic text-ink-soft text-[16px] mt-2.5">
-              {firstChairman.honorific}
-            </div>
-          )}
-        </div>
 
         {/* Managing Committee — 4-up large lockets */}
         <SubHeading>The Managing Committee</SubHeading>
         <div className="grid grid-cols-4 gap-y-14 gap-x-10 max-[960px]:grid-cols-3 max-[600px]:grid-cols-2 max-[600px]:gap-y-10 max-[600px]:gap-x-4">
           {managingCommittee.map((p) => (
             <Cameo key={p.name} p={p} size="lg" />
-          ))}
-        </div>
-
-        {/* Board of Governors — 4-up medium lockets */}
-        <SubHeading>The Board of Governors</SubHeading>
-        <div className="grid grid-cols-4 gap-y-12 gap-x-10 max-[960px]:grid-cols-3 max-[600px]:grid-cols-2 max-[600px]:gap-y-10 max-[600px]:gap-x-4">
-          {boardOfGovernors.map((p) => (
-            <Cameo key={p.name + p.role} p={p} size="md" />
           ))}
         </div>
 

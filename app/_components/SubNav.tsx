@@ -1,9 +1,7 @@
 const links = [
   { href: "#about", label: "The Society" },
-  { href: "#history", label: "Our History" },
-  { href: "#vision", label: "Vision 2050" },
   { href: "#campuses", label: "Campuses" },
-  { href: "#members", label: "Board & Members" },
+  { href: "#members", label: "Members" },
 ];
 
 export default function SubNav() {
