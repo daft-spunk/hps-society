@@ -423,7 +423,7 @@ export const campuses: Campus[] = [
     region: "Hyderabad · The Founding Campus",
     body: "Set on 89 acres of the original Begumpet estate granted by Lady Viqar-ul-Umra, Begumpet is the spiritual home of the institution. The colonnaded heritage buildings and the central dome — symbols recognised across Hyderabad — house a co-educational school of national stature, with alumni who have shaped business, science, the arts and public life.",
     image: "/images/campuses/begumpet.jpg",
-    logo: "/images/crest.jpeg",
+    logo: "/images/campuses/logos/begumpet.png",
     website: "https://www.hpsbegumpet.org.in/",
   },
   {

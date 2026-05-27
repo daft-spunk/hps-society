@@ -67,12 +67,18 @@ export default function Footer() {
 
       <div className="max-w-[1120px] mx-auto mt-[60px] pt-6 border-t border-[rgba(201,163,90,0.25)] flex justify-between items-center flex-wrap gap-4 font-cinzel text-[10px] tracking-glance text-gold-300 uppercase">
         <div className="flex items-center gap-[14px]">
-          <img
-            src="/images/crest.jpeg"
-            alt=""
-            className="w-14 h-14 rounded-full"
+          <span
+            className="inline-block w-14 h-14 rounded-full overflow-hidden bg-navy-900"
             style={{ boxShadow: "0 0 0 1px var(--gold-500)" }}
-          />
+            aria-hidden="true"
+          >
+            <img
+              src="/images/crest.jpeg"
+              alt=""
+              className="w-full h-full object-cover"
+              style={{ transform: "scale(1.08)" }}
+            />
+          </span>
           <div>
             <span className="block font-cinzel text-[13px] tracking-roll text-white">
               HPS Society

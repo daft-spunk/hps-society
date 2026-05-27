@@ -16,7 +16,12 @@ export default function Masthead() {
         <img
           src="/images/crest.jpeg"
           alt="The Hyderabad Public School Society crest"
-          className="w-[120px] h-[120px] rounded-full object-cover block mx-auto mb-[18px] shadow-crest bg-navy-900 reveal-up"
+          className="w-[120px] h-[120px] rounded-full object-cover block mx-auto mb-[18px] bg-navy-900 reveal-up"
+          style={{
+            transform: "scale(1.08)",
+            boxShadow:
+              "0 0 0 1px var(--gold-500), 0 12px 40px rgba(0,0,0,0.4)",
+          }}
         />
         <h1
           className="font-cinzel font-medium text-white leading-[1.15] m-0 reveal-up text-[clamp(26px,4.2vw,52px)]"
