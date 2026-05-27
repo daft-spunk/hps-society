@@ -69,14 +69,13 @@ export default function Footer() {
         <div className="flex items-center gap-[14px]">
           <span
             className="inline-block w-14 h-14 rounded-full overflow-hidden bg-navy-900"
-            style={{ boxShadow: "0 0 0 1px var(--gold-500)" }}
             aria-hidden="true"
           >
             <img
               src="/images/crest.jpeg"
               alt=""
               className="w-full h-full object-cover"
-              style={{ transform: "scale(1.08)" }}
+              style={{ transform: "scale(1.18)" }}
             />
           </span>
           <div>

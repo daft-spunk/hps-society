@@ -13,16 +13,22 @@ export default function Masthead() {
         aria-hidden="true"
       />
       <div className="relative max-w-[1100px] mx-auto z-10 masthead-inner">
-        <img
-          src="/images/crest.jpeg"
-          alt="The Hyderabad Public School Society crest"
-          className="w-[120px] h-[120px] rounded-full object-cover block mx-auto mb-[18px] bg-navy-900 reveal-up"
+        <span
+          className="block mx-auto mb-[18px] rounded-full overflow-hidden bg-navy-900 reveal-up"
           style={{
-            transform: "scale(1.08)",
-            boxShadow:
-              "0 0 0 1px var(--gold-500), 0 12px 40px rgba(0,0,0,0.4)",
+            width: 120,
+            height: 120,
+            boxShadow: "0 12px 40px rgba(0,0,0,0.4)",
           }}
-        />
+          aria-hidden="true"
+        >
+          <img
+            src="/images/crest.jpeg"
+            alt=""
+            className="w-full h-full object-cover"
+            style={{ transform: "scale(1.18)" }}
+          />
+        </span>
         <h1
           className="font-cinzel font-medium text-white leading-[1.15] m-0 reveal-up text-[clamp(26px,4.2vw,52px)]"
           style={{ animationDelay: "120ms", letterSpacing: "0.12em" }}
