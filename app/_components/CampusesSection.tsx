@@ -51,7 +51,18 @@ export default function CampusesSection() {
               </figure>
               <div className="px-7 py-6 pb-7">
                 <h3 className="font-cinzel text-[14px] tracking-roll m-0 mb-1.5 text-navy-900 uppercase">
-                  HPS {c.name}
+                  {c.website ? (
+                    <a
+                      href={c.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-navy-900 no-underline border-b border-transparent hover:border-gold-500 hover:text-navy-900 transition-colors"
+                    >
+                      HPS {c.name}
+                    </a>
+                  ) : (
+                    <>HPS {c.name}</>
+                  )}
                 </h3>
                 <p className="font-cormorant italic text-gold-500 text-[15px] m-0 mb-3">
                   {c.region}
