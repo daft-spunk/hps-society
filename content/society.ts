@@ -258,6 +258,11 @@ export const societyMembers: Person[] = [
     portrait: "/images/people/kiran-kumar-reddy.jpg",
   },
   {
+    name: "Mr. M. Adithya Reddy",
+    role: "Member",
+    portrait: "/images/people/adithya-reddy.jpg",
+  },
+  {
     name: "Mr. Akbaruddin Owaisi",
     role: "Member",
     portrait: "/images/people/akbaruddin-owaisi.jpg",
@@ -266,6 +271,11 @@ export const societyMembers: Person[] = [
     name: "Mr. Narender Surana",
     role: "Member",
     portrait: "/images/people/narender-surana.jpg",
+  },
+  {
+    name: "Sri. R. Raghuram Reddy",
+    role: "Member",
+    portrait: "/images/people/raghuram-reddy.png",
   },
   {
     name: "Mr. C. Parthasarathy",
@@ -281,6 +291,11 @@ export const societyMembers: Person[] = [
     name: "Mr. B. Subhash Reddy",
     role: "Member",
     portrait: "/images/people/subhash-reddy.jpg",
+  },
+  {
+    name: "Sri. G. Appnender Babu",
+    role: "Member",
+    portrait: "/images/people/appnender-babu.png",
   },
   {
     name: "Mr. Masiuddin Ahmed",
@@ -321,6 +336,11 @@ export const societyMembers: Person[] = [
     name: "Mr. Eswara Venkatesam",
     role: "Member",
     portrait: "/images/people/eswara-venkatesam.png",
+  },
+  {
+    name: "Sri. V. Venu Vinod",
+    role: "Member",
+    portrait: "/images/people/venu-vinod.png",
   },
   {
     name: "Dr. G. V. Rao",
