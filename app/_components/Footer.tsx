@@ -52,12 +52,6 @@ export default function Footer() {
                   className="text-gold-100 no-underline border-b border-transparent hover:border-gold-400 hover:text-white transition-colors"
                 >
                   {s.name}
-                  <span
-                    className="inline-block ml-1.5 text-gold-400"
-                    aria-hidden="true"
-                  >
-                    ↗
-                  </span>
                 </a>
               </li>
             ))}
