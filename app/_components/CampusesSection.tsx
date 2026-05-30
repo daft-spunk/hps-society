@@ -36,14 +36,6 @@ export default function CampusesSection() {
                   </div>
                 )}
                 <div className="campus-overlay" aria-hidden="true" />
-                {c.logo && (
-                  <img
-                    src={c.logo}
-                    alt=""
-                    aria-hidden="true"
-                    className="campus-logo"
-                  />
-                )}
                 <div className="campus-year">
                   <span className="campus-year-label">Established</span>
                   <span className="campus-year-num">{c.founded}</span>

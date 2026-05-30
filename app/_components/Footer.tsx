@@ -22,10 +22,10 @@ export default function Footer() {
           </h2>
           <p className="text-gold-100 text-[16px] leading-[1.6] m-0">
             <a
-              href="mailto:office.alumni@hpss.org.in"
+              href="mailto:secretariat@hpss.org.in"
               className="text-gold-100 no-underline border-b border-transparent hover:border-gold-400"
             >
-              office.alumni@hpss.org.in
+              secretariat@hpss.org.in
             </a>
           </p>
           <p className="text-gold-100 text-[16px] leading-[1.6] m-0 mt-2">
@@ -67,17 +67,12 @@ export default function Footer() {
 
       <div className="max-w-[1120px] mx-auto mt-[60px] pt-6 border-t border-[rgba(201,163,90,0.25)] flex justify-between items-center flex-wrap gap-4 font-cinzel text-[10px] tracking-glance text-gold-300 uppercase">
         <div className="flex items-center gap-[14px]">
-          <span
-            className="inline-block w-14 h-14 rounded-full overflow-hidden bg-navy-900"
+          <img
+            src="/images/crest.png"
+            alt=""
             aria-hidden="true"
-          >
-            <img
-              src="/images/crest.jpeg"
-              alt=""
-              className="w-full h-full object-cover"
-              style={{ transform: "scale(1.18)" }}
-            />
-          </span>
+            className="w-14 h-14"
+          />
           <div>
             <span className="block font-cinzel text-[13px] tracking-roll text-white">
               HPS Society

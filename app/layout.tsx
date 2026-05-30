@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     title: "The Hyderabad Public School Society — Est. 1923",
     description:
       "The apex governing body of The Hyderabad Public Schools — Begumpet, Ramanthapur, Kadapa and Warangal.",
-    images: ["/images/crest.jpeg"],
+    images: ["/images/crest.png"],
   },
 };
 
