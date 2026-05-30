@@ -29,17 +29,17 @@ const sizeClasses: Record<Size, { frame: string; name: string; role: string }> =
   lg: {
     frame: "cameo-lg mb-5",
     name: "font-cormorant font-semibold text-[20px] text-navy-900 leading-[1.2] m-0",
-    role: "font-cinzel text-[10px] tracking-cameo text-gold-500 uppercase mt-1.5 leading-[1.45]",
+    role: "font-cinzel font-medium text-[12px] tracking-cameo text-navy-900 uppercase mt-2 leading-[1.5]",
   },
   md: {
     frame: "cameo-md mb-4",
     name: "font-cormorant font-semibold text-[17px] text-navy-900 leading-[1.2] m-0",
-    role: "font-cinzel text-[9.5px] tracking-cameo text-gold-500 uppercase mt-1.5 leading-[1.45]",
+    role: "font-cinzel font-medium text-[11.5px] tracking-cameo text-navy-900 uppercase mt-2 leading-[1.5]",
   },
   sm: {
     frame: "cameo-sm mb-3",
     name: "font-cormorant font-semibold text-[15px] text-navy-900 leading-[1.2] m-0",
-    role: "font-cinzel text-[9px] tracking-roll text-ink-soft uppercase mt-1 leading-[1.45]",
+    role: "font-cinzel font-medium text-[11px] tracking-roll text-navy-900 uppercase mt-1.5 leading-[1.5]",
   },
 };
 
@@ -79,7 +79,6 @@ export default function MembersSection() {
           titleId="members-title"
           eyebrow="— III —"
           title="Members of the Society"
-          sub="The custodians of the institution."
         />
 
         {/* Managing Committee — 4-up large lockets */}

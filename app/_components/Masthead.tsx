@@ -31,11 +31,31 @@ export default function Masthead() {
           </em>
         </h1>
         <p
-          className="font-cormorant italic text-gold-100 mt-[14px] text-[clamp(16px,1.6vw,20px)] tracking-[0.02em] reveal-up"
+          className="mt-[14px] reveal-up flex flex-wrap items-center justify-center gap-x-3 gap-y-1 font-cinzel text-gold-100 text-[clamp(12px,1.3vw,15px)] tracking-ribbon uppercase"
           style={{ animationDelay: "240ms" }}
         >
-          Custodians of a hundred-year legacy across Begumpet, Ramanthapur,
-          Kadapa &amp; Warangal.
+          {[
+            { name: "Begumpet", href: "https://www.hpsbegumpet.org.in/" },
+            { name: "Ramanthapur", href: "https://hpsramanthapur.org/" },
+            { name: "Kadapa", href: "https://www.hpskadapa.org/" },
+            { name: "Warangal", href: "https://www.hpswarangal.org/" },
+          ].map((s, i, arr) => (
+            <span key={s.href} className="inline-flex items-center gap-3">
+              <a
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gold-100 no-underline border-b border-transparent hover:border-gold-400 hover:text-white transition-colors"
+              >
+                {s.name}
+              </a>
+              {i < arr.length - 1 && (
+                <span className="text-gold-500 opacity-60" aria-hidden="true">
+                  |
+                </span>
+              )}
+            </span>
+          ))}
         </p>
         <div
           className="flex items-center justify-center gap-[14px] mt-[18px] text-gold-500 reveal-up"
