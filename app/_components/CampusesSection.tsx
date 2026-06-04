@@ -59,9 +59,6 @@ export default function CampusesSection() {
                 <p className="font-cormorant italic text-gold-500 text-[15px] m-0 mb-3">
                   {c.region}
                 </p>
-                <p className="m-0 text-[16px] text-ink-soft leading-[1.65]">
-                  {c.body}
-                </p>
                 {c.website && (
                   <a
                     href={c.website}
