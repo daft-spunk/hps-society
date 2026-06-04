@@ -60,16 +60,6 @@ export const managingCommittee: Person[] = [
     portrait: "/images/people/jalagam-venkat-rao.png",
   },
   {
-    name: "Mr. J. Vikramdev Rao",
-    role: "Member",
-    portrait: "/images/people/vikramdev-rao.jpg",
-  },
-  {
-    name: "Mrs. Marri Nidhi Reddy",
-    role: "Member",
-    portrait: "/images/people/nidhi-reddy.jpg",
-  },
-  {
     name: "Mr. K. Ashvani Kanth Rao",
     role: "Member",
     portrait: "/images/people/ashvani-kanth-rao.png",
@@ -78,6 +68,16 @@ export const managingCommittee: Person[] = [
     name: "Mr. Hemant Jalan",
     role: "Member",
     portrait: "/images/people/hemant-jalan.png",
+  },
+  {
+    name: "Mr. J. Vikramdev Rao",
+    role: "Member",
+    portrait: "/images/people/vikramdev-rao.jpg",
+  },
+  {
+    name: "Mrs. Marri Nidhi Reddy",
+    role: "Member",
+    portrait: "/images/people/nidhi-reddy.jpg",
   },
 ];
 
@@ -273,7 +273,7 @@ export const societyMembers: Person[] = [
     portrait: "/images/people/narender-surana.jpg",
   },
   {
-    name: "Sri. R. Raghuram Reddy",
+    name: "Mr. R. Raghuram Reddy",
     role: "Member",
     portrait: "/images/people/raghuram-reddy.png",
   },
@@ -293,7 +293,7 @@ export const societyMembers: Person[] = [
     portrait: "/images/people/subhash-reddy.jpg",
   },
   {
-    name: "Sri. G. Appnender Babu",
+    name: "Mr. G. Appnender Babu",
     role: "Member",
     portrait: "/images/people/appnender-babu.png",
   },
@@ -338,7 +338,7 @@ export const societyMembers: Person[] = [
     portrait: "/images/people/eswara-venkatesam.png",
   },
   {
-    name: "Sri. V. Venu Vinod",
+    name: "Mr. V. Venu Vinod",
     role: "Member",
     portrait: "/images/people/venu-vinod.png",
   },
